@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>白纸食堂</title>
+    <style>
+        /*导航内容样式*/
+        /* 顶部、顶部导航栏样式 */
+        .header {
+            padding: 10px;/*内边距*/
+            color: #FFFFFF;
+            background-color: #333333;
+        }
+        .header .container {
+            margin: auto;/*居中*/
+            display: flex;/*弹性布局*/
+            justify-content: center;/*水平居中*/
+            align-items: center;/*垂直居中*/
+            width: 1000px;/*容器宽度*/
+        }
+        .header ul {
+            display: flex;
+            margin-left: auto;
+            list-style-type: none;
+        }
+        .header li {
+            margin: 0 8px;
+        }
+        .header a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        /* 导航项之间的竖线 */
+        .header a::after {
+            content: "|";
+            margin-left: 10px;
+        }
+        /* 去掉最后一个导航项的竖线 */
+        .header li:last-child a::after {
+            content: none;
+        }
+        /* 页脚样式 */
+        .footer {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+        /*全局样式调整*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;/*盒模型*/
+        }
+        html,
+        body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+        }
+        /*上下布局*/
+        .content {
+            flex:auto;
+            width: 1000px;
+            margin: auto;
+        }
+        /*地方菜系样式*/
+        /*标题样式*/
+        .content .container_title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        /*查看所有的互动方式*/
+        .see_all {
+            text-decoration: none;
+            color: #222222;
+        }
+        .see_all:hover {/*鼠标悬停*/
+            color: #FF0000;
+        }
+        /*菜系图片布局*/
+        .cooking-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        /*每个菜系图片的位置布局*/
+        .cooking {
+            position: relative;/*相对定位*/
+            width: 240px;
+            height: 128px;
+        }
+        /*背景图片大小*/
+        .cooking .cooking_bg {
+            width: 100%;
+            height: 100%;
+        }
+        /*文字位置、样式*/
+        .cooking .cooking_content {
+            /*布局*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            /*大小与样式*/
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+        }
+        .foods {
+            display: flex;
+        }
+        /* 推荐样式 */
+        .restaurant-card {
+            margin-bottom: 8px;
+            margin-left: 8px;
+            padding: 20px;
+            width: 240px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .restaurant-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .restaurant-card h3 {
+            margin: 8px 0;
+            font-size: 18px;
+            color: #333333;
+        }
+        .restaurant-card p {
+            margin: 8px 0;
+            font-size: 14px;
+            color: #666666;
+        }
+        .restaurant-card:hover {
+            border-radius: 12px;
+            box-shadow: 0 19px 39px 0 #999999;
+            cursor: pointer;
+            transform: translate(0, -4px);
+       }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="header">
+        <div class="container">
+            <h1>美食天堂</h1>
+            <ul><!--无序列表-->
+                <li><a href="#">首页</a></li>
+                <li><a href="#">美食分类</a></li>
+                <li><a href="#">特别推荐</a></li>
+                <li><a href="#">最新菜单</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 内容区域 -->
+    <div class="content">
+        <!-- 菜系分类 -->
+        <div class="container">
+            <div class="container_title">
+                <h2>菜系</h2>
+                <div>
+                    <a href="#" class="see_all">查看所有</a>
+                </div>
+            </div>
+        </div>
+        <div class="cooking-list">
+            <div class="cooking">
+                <img class="cooking_bg" src="https://cdn.penpencode.com/upload/9b541a03be23dfd65a697c8d6847c576/1280x848/Hotpot.jpg"
+                    alt="火锅">
+                <div class="cooking_content">
+                    <p>火锅</p>
+                </div>
+            </div>
+            <div class="cooking">
+                <img class="cooking_bg" src="https://cdn.penpencode.com/upload/fff786aa9747072de2d281a6721b1788/1280x960/reg_cuisine.jpg"
+                    alt="餐厅1">
+                <div class="cooking_content">
+                    <p>地方菜系</p>
+                </div>
+            </div>
+            <div class="cooking">
+                <img class="cooking_bg" src="https://cdn.penpencode.com/upload/f579011d0d0ab430eb5a49c2276366b6/1280x853/Exotic_cuisine.jpg"
+                    alt="餐厅1">
+                <div class="cooking_content">
+                    <p>异域料理</p>
+                </div>
+            </div>
+            <div class="cooking">
+                <img class="cooking_bg" src="https://cdn.penpencode.com/upload/3f4ef34c142b13100652f5eec1ac41e9/1280x853/seafood.jpg" alt="餐厅1">
+                <div class="cooking_content">
+                    <p>海鲜</p>
+                </div>
+            </div>
+        </div>
+
+              <!-- 餐厅推荐  -->
+              <div class="container">
+                <div class="container_title">
+                    <h2>热门餐厅</h2>
+                    <div>
+                        <a href="#" class="see_all">查看所有</a>
+                    </div>
+                </div>
+                <div class="foods">
+                    <div class="restaurant-card">
+                        <img src="images_taylor/pic1.jpg" alt="早餐馆">
+                        <h3>海湾餐厅</h3>
+                        <p>沉浸在美味的海边风情之旅。</p>
+                    </div>
+                    <div class="restaurant-card">
+                        <img src="https://cdn.penpencode.com/upload/c5c58f2a0cbdad55f0a33d692212e374/1280x853/cafe.jpg" alt="餐厅2">
+                        <h3>Times咖啡</h3>
+                        <p>每一杯都是时光的味道。</p>
+                    </div>
+                    <div class="restaurant-card">
+                        <img src="https://cdn.penpencode.com/upload/36bbaa4a05bf5c386f93e746cd3153f8/1280x853/Water_bar.jpg" alt="餐厅2">
+                        <h3>怡心餐厅</h3>
+                        <p>美味之间，心意满满。</p>
+                    </div>
+                    <div class="restaurant-card">
+                        <img src="https://cdn.penpencode.com/upload/042991da9402ba43ffd6d7b255ea6ddf/1280x853/chifa.jpg" alt="餐厅2">
+                        <h3>南堂中轩</h3>
+                        <p>传统美味，中式烹饪的极致。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 菜品推荐 -->
+        <div class="container">
+            <div class="container_title">
+                <h2>寻味好菜</h2>
+                <div>
+                    <a href="#" class="see_all">查看所有</a>
+                </div>
+            </div>
+            <div class="foods">
+                <div class="restaurant-card">
+                    <img src="https://cdn.penpencode.com/upload/b00db074949413d9266107840378ee99/1280x853/asparagus.jpg" alt="餐厅1">
+                    <h3>芦笋牛排</h3>
+                    <p>牛肉和芦笋的精致滋味。</p>
+                </div>
+                <div class="restaurant-card">
+                    <img src="https://cdn.penpencode.com/upload/9a81ef689c00c8c9d6a711e38b2aae12/1280x855/pizza.jpg" alt="餐厅2">
+                    <h3>玛格丽特披萨</h3>
+                    <p>蕴含意式风情的独特滋味。</p>
+                </div>
+                <div class="restaurant-card">
+                    <img src="https://cdn.penpencode.com/upload/b7b585042f2505577ec0752604e143f8/1280x853/breakfast.jpg" alt="餐厅2">
+                    <h3>奶酪吐司</h3>
+                    <p>奶香浓郁，回味无穷。</p>
+                </div>
+                <div class="restaurant-card">
+                    <img src="https://cdn.penpencode.com/upload/10b2ab76a0899f511308926190c5f528/1280x854/steak.jpg" alt="餐厅2">
+                    <h3>香煎牛排</h3>
+                    <p>食尚美味，一品牛排。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 页脚 -->
+    <div class="footer">
+        <div>
+            <p>&copy; 2023 美食天堂</p>
+        </div>
+    </div>
+</body>
+</html>
